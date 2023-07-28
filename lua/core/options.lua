@@ -24,7 +24,7 @@ vim.opt.swapfile = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -37,6 +37,15 @@ vim.api.nvim_create_augroup("highlight", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	group = "highlight",
 	pattern = { "*.py" },
+	callback = function()
+		vim.cmd(":TSEnable highlight")
+	end,
+})
+
+vim.api.nvim_create_augroup("highlight", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	group = "highlight",
+	pattern = { "*.yaml" },
 	callback = function()
 		vim.cmd(":TSEnable highlight")
 	end,

@@ -45,7 +45,7 @@ keymap("x", "<leader>p", [["_dP]])
 
 -- Manual Format keymap in case you want to format before saving
 keymap("n", "<leader>fm", function()
-    vim.lsp.buf.format()
+	vim.lsp.buf.format()
 end)
 
 -- Making a file an executable
@@ -69,9 +69,10 @@ keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Commenting remaps
 keymap("n", "<leader>/", function()
-    require("Comment.api").toggle.linewise.current()
+	require("Comment.api").toggle.linewise.current()
 end)
 
 keymap("n", "<leader>ne", ":Neorg export to-file<Space>")
+keymap("n", "<leader>h", ":TSToggle highlight<CR>")
 
 keymap("i", "jk", "<Esc>")
