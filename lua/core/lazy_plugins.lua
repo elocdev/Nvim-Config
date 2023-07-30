@@ -21,6 +21,11 @@ local plugins = {
 		lazy = false,
 		priority = 1000,
 	},
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	"nvim-tree/nvim-tree.lua",
 	{
 		"christoomey/vim-tmux-navigator",
@@ -143,7 +148,7 @@ local opts = {
 		lazy = false,
 	},
 	install = {
-		colorscheme = { "nightfly" },
+		colorscheme = { "kanagawa" },
 	},
 	ui = {
 		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
