@@ -185,3 +185,13 @@ lspconfig.yamlls.setup({
 		},
 	},
 })
+lspconfig.pyright.setup({
+	on_attach = lsp_attach,
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "off",
+			},
+		},
+	},
+})
