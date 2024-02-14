@@ -26,6 +26,19 @@ local plugins = {
 		lazy = false,
 		priority = 1000,
 	},
+	{
+		"olimorris/onedarkpro.nvim",
+		priority = 1000,
+	},
+	{
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"EdenEast/nightfox.nvim",
+		priority = 1000,
+	},
 	"nvim-tree/nvim-tree.lua",
 	{
 		"christoomey/vim-tmux-navigator",
@@ -61,16 +74,6 @@ local plugins = {
 		config = true,
 	},
 	{
-		"nvim-neorg/neorg",
-		build = ":Neorg sync-parsers",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-cmp",
-		},
-		cmd = "Neorg",
-	},
-	{
 		"CRAG666/code_runner.nvim",
 		config = true,
 	},
@@ -84,7 +87,8 @@ local plugins = {
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	-- fork of null-ls
-	"elocdev/null-ls.nvim",
+	-- "elocdev/null-ls.nvim",
+	"nvimtools/none-ls.nvim",
 
 	-- Autocompletion
 	"hrsh7th/nvim-cmp",
@@ -148,7 +152,7 @@ local opts = {
 		lazy = false,
 	},
 	install = {
-		colorscheme = { "kanagawa" },
+		colorscheme = { "catppuccin" },
 	},
 	ui = {
 		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },

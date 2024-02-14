@@ -19,8 +19,20 @@ require("rose-pine").setup({
 	},
 })
 
+require("cyberdream").setup({
+	transparent = true,
+	italic_comments = true,
+	hide_fillchars = true,
+	borderless_telescope = true,
+})
+
 vim.o.termguicolors = true
-vim.cmd([[colorscheme kanagawa]])
+-- vim.cmd([[colorscheme kanagawa]])
+-- vim.cmd([[colorscheme catppuccin]])
+-- vim.cmd([[colorscheme PaperColor]])
+vim.cmd([[colorscheme cyberdream]])
+-- vim.cmd([[colorscheme onedark]])
+-- vim.cmd([[colorscheme nightfox]])
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
