@@ -14,18 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	-- Color Scheme
 	{ "catppuccin/nvim", name = "catppuccin" },
-	{ "rose-pine/neovim", name = "rose-pine" },
-	{
-		"bluz71/vim-nightfly-colors",
-		name = "nightfly",
-		lazy = false,
-		priority = 1000,
-	},
-	{
-		"rebelot/kanagawa.nvim",
-		lazy = false,
-		priority = 1000,
-	},
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = 1000,
@@ -40,6 +28,15 @@ local plugins = {
 		priority = 1000,
 	},
 	"nvim-tree/nvim-tree.lua",
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+	},
 	{
 		"christoomey/vim-tmux-navigator",
 		lazy = false,
@@ -60,14 +57,13 @@ local plugins = {
 	"lewis6991/gitsigns.nvim",
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
-	"akinsho/toggleterm.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
 	"tpope/vim-commentary",
-	"theprimeagen/harpoon",
 	"windwp/nvim-ts-autotag",
 	"MunifTanjim/prettier.nvim",
+	"machakann/vim-highlightedyank",
 	{
 		"barrett-ruth/live-server.nvim",
 		build = "yarn global add live-server",
@@ -86,8 +82,6 @@ local plugins = {
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	-- fork of null-ls
-	-- "elocdev/null-ls.nvim",
 	"nvimtools/none-ls.nvim",
 
 	-- Autocompletion
@@ -117,7 +111,6 @@ local plugins = {
 		dependencies = { "neovim/nvim-lspconfig" },
 	},
 	"b0o/schemastore.nvim",
-	"mattn/efm-langserver",
 	"nvim-lua/plenary.nvim",
 	"VidocqH/lsp-lens.nvim",
 	{
@@ -126,18 +119,23 @@ local plugins = {
 	},
 
 	-- DAP
-	"mfussenegger/nvim-dap",
 	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = { "mfussenegger/nvim-dap" },
-	},
-	{
-		"mfussenegger/nvim-dap-python",
+		"mfussenegger/nvim-dap",
 		dependencies = {
-			"mfussenegger/nvim-dap",
 			"rcarriga/nvim-dap-ui",
+			"mfussenegger/nvim-dap-python",
 		},
 	},
+	{
+		"nvim-neotest/neotest-python",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	},
+	"nvim-neotest/neotest-python",
+	"nvim-neotest/nvim-nio",
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",

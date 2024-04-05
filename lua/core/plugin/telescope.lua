@@ -107,7 +107,7 @@ end)
 
 keymap(
 	"n",
-	"<leader>pf",
+	"<leader>ff",
 	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>",
 	opts
 )
@@ -119,7 +119,11 @@ keymap(
 )
 keymap(
 	"n",
-	"<leader>ps",
+	"<leader>fs",
 	"<cmd>lua require'telescope.builtin'.grep_string({ search = vim.fn.input('Grep > ') })<CR>",
 	opts
 )
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
+keymap("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>")
+keymap("n", "<leader>ft", "<cmd>Telescope lsp_type_definitions<CR>")
+keymap("n", "<leader>fr", "<cmd>Telescope lsp_references<CR>")

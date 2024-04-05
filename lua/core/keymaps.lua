@@ -24,7 +24,7 @@ keymap("n", "H", "_", opts)
 keymap("n", "L", "$", opts)
 
 -- NvimTreeToggle
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
 -- Keymap for undotree
 keymap("n", "<leader>u", ":UndotreeToggle<CR>", opts)
@@ -72,7 +72,6 @@ keymap("n", "<leader>/", function()
 	require("Comment.api").toggle.linewise.current()
 end)
 
-keymap("n", "<leader>ne", ":Neorg export to-file<Space>")
 keymap("n", "<leader>h", ":TSToggle highlight<CR>")
 
 keymap("i", "jk", "<Esc>")
